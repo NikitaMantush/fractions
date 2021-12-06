@@ -1,0 +1,6 @@
+﻿  fraction1.cpp
+  Дробь.cpp
+  The contents of <execution> are available only with C++17 or later.
+D:\My project\Дробь\Дробь\Дробь.cpp(10,7): warning C4101: res: неиспользованная локальная переменная
+  Создание кода...
+  Дробь.vcxproj -> D:\My project\Дробь\Debug\Дробь.exe

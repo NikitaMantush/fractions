@@ -28,7 +28,6 @@ public:
 	long GetDenominator();
 	void SetDenominator(long);
 	void check();
-	double getDouble();
 	void Print()
 	{
 		if (denominator==0)

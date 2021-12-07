@@ -32,13 +32,9 @@ void fraction::set()
 	numerator /= m_gcd;
 	denominator /= m_gcd;
 }
-double fraction::getDouble()
-{
-	return static_cast<double>(numerator) / denominator;
-}
 void fraction::SetNumerator(long numerator)
 {
-	this->numerator=numerator;
+	this->numerator = numerator;
 	set();
 }
 long fraction::GetNumerator()
@@ -63,12 +59,12 @@ fraction operator+(const fraction& firsfraction, const fraction& secondfraction)
 {
 	long num1;
 	long denom1;
-	num1 = firsfraction.numerator*secondfraction.denominator + secondfraction.numerator*firsfraction.denominator;
+	num1 = firsfraction.numerator * secondfraction.denominator + secondfraction.numerator * firsfraction.denominator;
 	denom1 = firsfraction.denominator * secondfraction.denominator;
 	fraction temp(num1, denom1);
 	temp.set();
 	return temp;
- }
+}
 fraction operator-(const fraction& firsfraction, const fraction& secondfraction)
 {
 	long num1;
@@ -91,8 +87,8 @@ fraction operator *(const fraction& firsfraction, const fraction& secondfraction
 }
 fraction operator /(const fraction& firsfraction, const fraction& secondfraction)
 {
-	fraction temp(0,0);
-	if (secondfraction.numerator != 0) 
+	fraction temp(0, 0);
+	if (secondfraction.numerator != 0)
 	{
 		long denom1 = firsfraction.numerator * secondfraction.denominator;
 		long num1 = firsfraction.denominator * secondfraction.numerator;
@@ -108,75 +104,75 @@ fraction operator /(const fraction& firsfraction, const fraction& secondfraction
 		return temp;
 	}
 }
- bool operator== (fraction& firsfraction, fraction& secondfraction) 
- {
-	 if (firsfraction.getDouble() == secondfraction.getDouble())
-	 {
-		 return true;
-	 }
-	 else
-	 {
-		 return false;
-	 }
-		
+bool operator== (fraction& firsfraction, fraction& secondfraction)
+{
+	if ((firsfraction.numerator * secondfraction.denominator) - (firsfraction.denominator * secondfraction.numerator) == 0)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+
 }
- bool operator!= (fraction& firsfraction, fraction& secondfraction)
- {
-	 if (firsfraction.getDouble() != secondfraction.getDouble())
-	 {
-		 return true;
-	 }
-	 else
-	 {
-		 return false;
-	 }
+bool operator!= (fraction& firsfraction, fraction& secondfraction)
+{
+	if ((firsfraction.numerator * secondfraction.denominator) - (firsfraction.denominator * secondfraction.numerator) != 0)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 
- }
- bool operator>  (fraction& firsfraction, fraction& secondfraction)
- {
-	 if (firsfraction.getDouble() > secondfraction.getDouble())
-	 {
-		 return true;
-	 }
-	 else
-	 {
-		 return false;
-	 }
+}
+bool operator>  (fraction& firsfraction, fraction& secondfraction)
+{
+	if ((firsfraction.numerator * secondfraction.denominator) - (firsfraction.denominator * secondfraction.numerator) > 0)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 
- }
- bool operator>= (fraction& firsfraction, fraction& secondfraction)
- {
-	 if (firsfraction.getDouble() >= secondfraction.getDouble())
-	 {
-		 return true;
-	 }
-	 else
-	 {
-		 return false;
-	 }
+}
+bool operator>= (fraction& firsfraction, fraction& secondfraction)
+{
+	if ((firsfraction.numerator * secondfraction.denominator) - (firsfraction.denominator * secondfraction.numerator) >= 0)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 
- }
- bool operator<  (fraction& firsfraction, fraction& secondfraction)
- {
-	 if (firsfraction.getDouble() < secondfraction.getDouble())
-	 {
-		 return true;
-	 }
-	 else
-	 {
-		 return false;
-	 }
+}
+bool operator<  (fraction& firsfraction, fraction& secondfraction)
+{
+	if ((firsfraction.numerator * secondfraction.denominator) - (firsfraction.denominator * secondfraction.numerator) < 0)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 
- }
- bool operator<= (fraction& firsfraction, fraction& secondfraction)
- {
-	 if (firsfraction.getDouble() <= secondfraction.getDouble())
-	 {
-		 return true;
-	 }
-	 else
-	 {
-		 return false;
-	 }
+}
+bool operator<= (fraction& firsfraction, fraction& secondfraction)
+{
+	if ((firsfraction.numerator * secondfraction.denominator) - (firsfraction.denominator * secondfraction.numerator) <= 0)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 
- }
+}
